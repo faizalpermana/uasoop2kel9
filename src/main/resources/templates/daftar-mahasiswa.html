@@ -1,0 +1,65 @@
+<html>
+<head>
+	<title>Daftar Karyawan</title>
+
+	<script src="/js/angular.min.js"></script>
+	<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" />
+	<script src="/coba-app.js"></script>
+</head>
+<body ng-app="CobaApp" class="container">
+	
+	<div class="jumbotron">
+		<h1>Daftar Karyawan</h1>
+	</div>
+
+
+
+	<div ng-controller="ApiController">
+
+	<button class="btn btn-danger"
+								ng-click="keluar()">
+							Keluar
+						</button>
+
+	
+
+		<table class="table">
+			<thead>
+				<tr>
+					<th>NIK</th>
+					<th>NAMA</th>
+					<th>JABATAN</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="mhs in daftarMahasiswa">
+					<td>{{mhs.nim}}</td>
+					<td>{{mhs.nama}}</td>
+					<td>{{mhs.jurusan}}</td>
+					<td>
+						<button class="btn btn-info"
+								ng-click="ubah(mhs)">
+							Ubah
+						</button>
+						<button class="btn btn-warning"
+								ng-click="hapus(mhs)">
+							Hapus
+						</button>
+					</td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td>
+						<a class="btn btn-primary"
+							href="/form">
+						  Tambah
+						</a>
+					</td>
+				</tr>
+			</tfoot>
+		</table>
+	</div>
+
+</body>
+</html>

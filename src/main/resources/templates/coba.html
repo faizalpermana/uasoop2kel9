@@ -1,0 +1,31 @@
+<html>
+<head>
+	<script src="/js/angular.min.js"></script>
+	<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" />
+	<script src="/coba-app.js"></script>
+</head>
+<body ng-app="CobaApp" ng-controller="CobaController">
+	<div class="container">
+	<div class="jumbotron">
+		<h1>Halaman Percobaan</h1>
+	</div>
+
+	Nama : <input type="text" ng-model="nama" />
+	
+	<br />
+
+	Selamat datang {{ nama }}
+	<br />
+	<button class="btn btn-primary" ng-click="tambah()">Tambah</button>
+
+	<br />
+	<br />
+	Daftar Nama :<br />
+	<ul>
+		<li ng-repeat="nm in daftarNama">
+			{{ nm }}
+		</li>
+	</ul>
+</div>
+</body>
+</html>
